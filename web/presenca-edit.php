@@ -1,7 +1,6 @@
 <?php require_once "web/header.php"; ?>
 
-<form name="frmAdd" method="post" action="" id="frmAdd"
-    onSubmit="return validate_pres_edit();">
+<form name="frmAdd" method="post" action="" id="frmAdd" onSubmit="return validate_pres_edit();">
     <div>
     <?php 
         $attendance_timestamp = strtotime($presenca_date);
@@ -16,7 +15,6 @@
                     <th><strong>Estudante</strong></th>
                     <th><strong>Presença</strong></th>
                     <th><strong>Falta</strong></th>
-
                 </tr>
             </thead>
             <tbody>
@@ -25,7 +23,6 @@
                 foreach ($estudanteResult as $k => $v) {
                     $presentChecked = "";
                     $absentChecked = "";
-                    
                     if($estudanteResult[$k]["id"] == $result[$k]["estudante_id"]) {
                         if($result[$k]["presenca"] == 1) { 
                             $presentChecked = "checked";
@@ -35,20 +32,17 @@
                     }
             ?>
           <tr>
-                    <td><input type="hidden"
-            name="estudante_id[]" id="estudante_id" value = "<?php echo $estudanteResult[$k]["id"]; ?>">
+            <td><input type="hidden" name="estudante_id[]" id="estudante_id" value = "<?php echo $estudanteResult[$k]["id"]; ?>">
             <?php echo $estudanteResult[$k]["nome"]; ?></td>
                     <td><input type="radio" name="presenca-<?php echo $estudanteResult[$k]["id"]; ?>" value="presenca" <?php echo $presentChecked; ?> /></td>
                     <td><input type="radio" name="presenca-<?php echo $estudanteResult[$k]["id"]; ?>" value="falta" <?php echo $absentChecked; ?> /></td>
-                </tr>
+            </tr>
                     <?php
                         }
                     }
                     ?>
             <tbody>
-        
         </table>
-        
     </div>
    <div>
         <input type="submit" name="add" id="btnSubmit" value="Salvar" />

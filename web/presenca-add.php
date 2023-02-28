@@ -12,30 +12,26 @@
                     <th><strong>Estudante</strong></th>
                     <th><strong>Presença</strong></th>
                     <th><strong>Falta</strong></th>
-
                 </tr>
             </thead>
             <tbody>
                     <?php 
-                   
             if (!empty($estudanteResult)) {
                 foreach ($estudanteResult as $k => $v) {
             ?>
           <tr>
-                    <td><input type="hidden"
+             <td><input type="hidden"
             name="estudante_id[]" id="estudante_id" value = "<?php echo $estudanteResult[$k]["id"]; ?>">
             <?php echo $estudanteResult[$k]["nome"]; ?></td>
                     <td><input type="radio" name="presenca-<?php echo $estudanteResult[$k]["id"]; ?>" value="presenca" checked /></td>
                     <td><input type="radio" name="presenca-<?php echo $estudanteResult[$k]["id"]; ?>" value="falta" /></td>
-                </tr>
+            </tr>
                     <?php
                         }
                     }
                     ?>
             <tbody>
-        
         </table>
-        
     </div>
    <div>
         <input type="submit" name="add" id="btnSubmit" value="Salvar" />

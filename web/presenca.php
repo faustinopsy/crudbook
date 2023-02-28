@@ -12,7 +12,6 @@
                     <th><strong>Presença</strong></th>
                     <th><strong>Falta</strong></th>
                     <th><strong>Ação</strong></th>
-
                 </tr>
             </thead>
             <tbody>
@@ -44,7 +43,6 @@
                         }
                     }
                     ?>
-
             <tbody>
         </table>
     </div>
